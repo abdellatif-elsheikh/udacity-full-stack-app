@@ -8,32 +8,39 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
+      # setup the environment
     steps:
       - node/install
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
       - run:
+      # install angular dependencies
           name: Front-End Install
           command: |
             npm run frontend:install
       - run:
+      # create a build project so the browser can see the app
           name: Front-End Build
           command: |
             npm run frontend:build
       - run:
+      # deploy frontend to s3 bucket
           name: Front-End Deploy
           command: |
             npm run frontend:deploy
       - run:
+      # install all dependencies fro the backend
           name: Back-End Install
           command: |
             npm run backend:install
       - run:
+      # build the app to transpile typescript and compress application
           name: Back-End Build
           command: |
             npm run backend:build
       - run:
+      # deploy the backend to elastic beanstalk
           name: Back-End Deploy
           command: |
             npm run backend:deploy
