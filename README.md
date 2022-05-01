@@ -1,4 +1,24 @@
-# Udagram
+# Application URL
+
+you can go to the application by clicking this [link](`http://udacity-udagram-app.s3-website-us-east-1.amazonaws.com`)
+
+## Important!!
+if your plan is to run this application locally you will need to update any import of environment variable in front end
+you will need to go throw those files 
+```
+udagram-frontend/src/main.ts
+udagram-frontend/src/app/app.component.ts
+udagram-frontend/src/app/menubar/menubar.component.ts
+udagram-frontend/src/app/menubar/menubar.component.spec
+udagram-frontend/src/app/home/home.page.ts
+udagram-frontend/src/app/api/api.service.ts
+```
+the update any `import { environment } from '../../environments/environment.prod';` 
+to `import { environment } from '../../environments/environment';`
+
+then it should run in a right way with you
+
+## Udagram
 
 This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
 
