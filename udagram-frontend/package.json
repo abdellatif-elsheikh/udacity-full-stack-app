@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "aws s3 cp www/ s3://udacity-hosting-full-stack-app/ --recursive --include \"*\""
   },
   "private": true,
   "dependencies": {
